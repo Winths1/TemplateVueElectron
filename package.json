@@ -1,0 +1,44 @@
+{
+  "name": "template-vue-electron",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "start": "electron .",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "os": "^0.1.2",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@electron-forge/publisher-github": "^7.4.0",
+    "@types/node": "^20.12.10",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "electron": "^30.0.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vue-tsc": "^2.0.6"
+  },
+  "config": {
+    "forge": {
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin",
+            "win32",
+            "win64",
+            "linux"
+          ],
+          "config": {
+            "electronVersion": "30.0.2"
+          }
+        }
+      ]
+    }
+  }
+}
